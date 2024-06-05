@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MatchScheduling">
+
+    <!-- Toolbar Section -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <!-- Left Section - Navigate to UpdateTournament -->
+        <ImageView
+            android:id="@+id/toolbarUpdateTournament"
+            android:layout_width="60dp"
+            android:layout_height="56dp"
+            android:layout_gravity="start"
+            android:layout_marginStart="90dp"
+            android:contentDescription="Update Tournament"
+            android:onClick="navigateToUpdateTournament"
+            android:src="@drawable/home_icon" />
+
+        <!-- Right Section - Navigate to Match Scheduling -->
+        <ImageView
+            android:id="@+id/toolbarMatchScheduling"
+            android:layout_width="50dp"
+            android:layout_height="46dp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="90dp"
+            android:contentDescription="Match Scheduling"
+            android:src="@drawable/match_schedule_icon" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/matchRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="100dp"
+        android:layout_below="@id/toolbar"
+        tools:listitem="@layout/item_match"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddMatch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="177dp"
+        android:layout_marginBottom="26dp"
+        android:src="@android:drawable/ic_input_add" />
+
+</RelativeLayout>

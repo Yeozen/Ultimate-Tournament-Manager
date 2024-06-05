@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1025822671873",
+    "project_id": "mobile-device-programming-app",
+    "storage_bucket": "mobile-device-programming-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1025822671873:android:a62f0be222c28f20d9ac00",
+        "android_client_info": {
+          "package_name": "com.example.ultimatetournamentmanager"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAB4c6vhG2S3vhmCV_P1EE_sNxM-oRBbt8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

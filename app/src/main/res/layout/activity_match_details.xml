@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@id/topSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <!-- Top Left Section -->
+        <LinearLayout
+            android:id="@+id/topLeftSection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center">
+
+            <!-- Name of the Scorekeeper -->
+            <EditText
+                android:id="@+id/editScorekeeperName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Scorekeeper Name"/>
+
+            <!-- Team that Pulled First -->
+            <EditText
+                android:id="@+id/editPulledTeam"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Team that Pulled First"/>
+
+            <!-- Gender Ratio Spinner -->
+            <Spinner
+                android:id="@+id/spinnerGenderRatio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp">
+            </Spinner>
+
+            <TextView
+                android:id="@+id/timeoutTimeText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textAlignment="center"
+                android:padding="10dp"
+                android:text="Time before Timeout">
+            </TextView>
+
+        </LinearLayout>
+
+        <!-- Top Right Section -->
+        <LinearLayout
+            android:id="@+id/topRightSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_toRightOf="@+id/topLeftSection"
+            android:orientation="vertical">
+
+            <!-- Timer -->
+            <TextView
+                android:id="@+id/textTimer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00:00"
+                android:textSize="24sp"
+                android:layout_marginTop="16dp"
+
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="showTimePickerDialog"/>
+
+            <!-- Buttons for Timer Control -->
+            <Button
+                android:id="@+id/btnStartTimer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Start Timer"/>
+
+            <Button
+                android:id="@+id/btnStopTimer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Stop Timer"/>
+
+            <Button
+                android:id="@+id/btnResetTimer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reset Timer"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <!-- Scoreboard -->
+    <!-- Scoreboard Section -->
+    <LinearLayout
+        android:id="@+id/scoreDisplaySection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/topSection"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal">
+
+        <!-- Team 1 -->
+        <LinearLayout
+            android:id="@+id/team1Layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/team1Name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Team 1"
+                android:textSize="18sp"
+                android:gravity="center"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/team1TimeoutBtn"
+                    android:layout_width="50dp"
+                    android:layout_height="48dp"
+                    android:src="@android:drawable/ic_lock_idle_alarm"
+                    />
+
+                <TextView
+                    android:id="@+id/team1Score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="24sp"
+                    android:padding="5dp"
+                    android:layout_gravity="center"/>
+
+                <Button
+                    android:id="@+id/btnTeam1Plus"
+                    android:layout_width="50dp"
+                    android:layout_height="48dp"
+                    android:text="+"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/team1TimeoutCircles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal">
+
+                <ImageView
+                    android:id="@+id/team1Circle1"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/outline_radio_button_unchecked_24"
+                    android:layout_marginRight="4dp"/>
+
+                <ImageView
+                    android:id="@+id/team1Circle2"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/outline_radio_button_unchecked_24"
+                    android:layout_marginLeft="4dp"/>
+
+                <!-- Add more circles if needed -->
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- VS -->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="VS"
+            android:textSize="18sp"
+            android:gravity="center"/>
+
+        <!-- Team 2 -->
+        <LinearLayout
+            android:id="@+id/team2Layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/team2Name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Team 2"
+                android:textSize="18sp"
+                android:gravity="center"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnTeam2Plus"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:text="+"/>
+
+                <TextView
+                    android:id="@+id/team2Score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="24sp"
+                    android:padding="5dp"
+                    android:layout_gravity="center"/>
+
+                <ImageButton
+                    android:id="@+id/team2TimeoutBtn"
+                    android:layout_width="50dp"
+                    android:layout_height="48dp"
+                    android:src="@android:drawable/ic_lock_idle_alarm"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/team2TimeoutCircles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal">
+
+                <ImageView
+                    android:id="@+id/team2Circle1"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/outline_radio_button_unchecked_24"
+                    android:layout_marginRight="4dp"/>
+
+                <ImageView
+                    android:id="@+id/team2Circle2"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/outline_radio_button_unchecked_24"
+                    android:layout_marginLeft="4dp"/>
+
+                <!-- Add more circles if needed -->
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/scoreDisplaySection"
+        android:layout_above="@+id/btnFinishMatch"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="16dp">
+    <!-- Table -->
+    <TableLayout
+        android:id="@+id/scoreTable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:stretchColumns="*">
+
+    <!-- Header Row -->
+    <TableRow>
+        <TextView
+            android:text="Points"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:padding="8dp"/>
+        <TextView
+            android:text="Score"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:padding="8dp"/>
+        <TextView
+            android:text="Assist"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:padding="8dp"/>
+        <TextView
+            android:text="Team"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:padding="8dp"/>
+    </TableRow>
+
+
+
+
+    </TableLayout>
+    </ScrollView>
+
+    <!-- Add your table UI elements here -->
+
+    <!-- Finish Match Button -->
+    <Button
+        android:id="@+id/btnFinishMatch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Finish Match"
+        android:layout_alignParentBottom="true"
+        android:onClick="onFinishMatchClick"/>
+
+</RelativeLayout>

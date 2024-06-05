@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menuUpdate"
+        android:title="@string/update_match_title_details" />
+    <item
+        android:id="@+id/menuDelete"
+        android:title="@string/delete" />
+    <item
+        android:id="@+id/menuEditMatchDetails"
+        android:title="Edit match details" />
+</menu>

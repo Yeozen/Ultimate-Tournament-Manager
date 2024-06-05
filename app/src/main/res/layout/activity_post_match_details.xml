@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Scoreboard -->
+    <!-- Scoreboard Section -->
+    <LinearLayout
+        android:id="@+id/scoreDisplaySection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal">
+
+        <!-- Team 1 -->
+        <LinearLayout
+            android:id="@+id/team1Layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+
+        <TextView
+                android:id="@+id/team1Name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Team 1"
+                android:textSize="18sp"
+                android:gravity="center"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/team1Score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="24sp"
+                    android:padding="5dp"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- VS -->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="VS"
+            android:textSize="18sp"
+            android:gravity="center"/>
+
+        <!-- Team 2 -->
+        <LinearLayout
+            android:id="@+id/team2Layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+
+        <TextView
+                android:id="@+id/team2Name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Team 2"
+                android:textSize="18sp"
+                android:gravity="center"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/team2Score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="24sp"
+                    android:padding="5dp"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Additional TextViews for displaying data -->
+    <TextView
+        android:id="@+id/scorekeeperNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/scoreDisplaySection"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true"
+        android:text="Scorekeeper Name: "
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/pulledTeamTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/scorekeeperNameTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:text="Team that Pulled First: "
+        android:textSize="18sp"/>
+
+    <!-- Table -->
+
+    <ScrollView
+        android:id="@+id/tableScrollview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pulledTeamTextView"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="16dp">
+
+
+    <TableLayout
+            android:id="@+id/postMatchTable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:stretchColumns="*">
+
+            <!-- Header Row -->
+            <TableRow>
+                <TextView
+                    android:text="Points"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="8dp"/>
+                <TextView
+                    android:text="Score"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:padding="8dp"/>
+                <TextView
+                    android:text="Assist"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:padding="8dp"/>
+                <TextView
+                    android:text="Team"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:padding="8dp"/>
+            </TableRow>
+        </TableLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/bottomDetails"
+        android:layout_below="@+id/tableScrollview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Team 1 Details -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/team1MaleMVP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:hint="Team 1 Male MVP"/>
+
+            <EditText
+                android:id="@+id/team1FemaleMVP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:hint="Team 1 Female MVP"/>
+
+            <EditText
+                android:id="@+id/team1SpiritScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:hint="Team 1 Spirit Score"/>
+        </LinearLayout>
+
+        <!-- Team 2 Details -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/team2MaleMVP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:hint="Team 2 Male MVP"/>
+
+            <EditText
+                android:id="@+id/team2FemaleMVP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:hint="Team 2 Female MVP"/>
+
+            <EditText
+                android:id="@+id/team2SpiritScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:hint="Team 2 Spirit Score"/>
+        </LinearLayout>
+        <!-- Finish Match Button -->
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bottomDetails">
+        <Button
+            android:id="@+id/btnSubmitMatchDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="submit match details"
+
+            android:onClick="btnSubmitMatchDetails"/>
+    </LinearLayout>
+
+
+
+</RelativeLayout>
+    </ScrollView>
